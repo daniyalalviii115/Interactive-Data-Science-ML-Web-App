@@ -1,1 +1,9 @@
-📊 Interactive EDA & ML AppAn end-to-end Streamlit web application for instant Data Exploration and Machine Learning. Upload any dataset, clean it, visualize it, and train models in seconds.✨ Key Features📂 Data Upload: Supports CSV & Excel files.🧹 Easy Cleaning: Toggle missing value handling (Drop or Mean Fill).📈 Dynamic EDA: Interactive Line, Hist, Box, Scatter, and Heatmap plots.🤖 Auto-ML: Train Linear Regression or Random Forest models dynamically.📊 Evaluation: Real-time metrics (RMSE, $R^2$) and Feature Importance charts.🛠️ Tech StackPython (Pandas, NumPy)Scikit-Learn (ML Models)Streamlit (Web UI)Seaborn/Matplotlib (Visuals)
+📊 Interactive EDA & ML AppAn end-to-end Streamlit web application for instant Data Exploration and Machine Learning. 
+Upload any dataset, clean it, visualize it, and train models in seconds.
+✨Key Features
+📂 Data Upload: Supports CSV & Excel files.
+🧹 Easy Cleaning: Toggle missing value handling (Drop or Mean Fill).
+📈 Dynamic EDA: Interactive Line, Hist, Box, Scatter, and Heatmap plots.
+🤖 Auto-ML: Train Linear Regression or Random Forest models dynamically.
+📊 Evaluation: Real-time metrics (RMSE, $R^2$) and Feature Importance charts.
+🛠️ Tech StackPython (Pandas, NumPy)Scikit-Learn (ML Models)Streamlit (Web UI)Seaborn/Matplotlib (Visuals)
