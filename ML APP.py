@@ -9,18 +9,18 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import root_mean_squared_error, r2_score
 
-# ---------------- PAGE CONFIG ----------------
+
 st.set_page_config(page_title="EDA & ML Demo", layout="wide")
 
-# ---------------- TITLE ----------------
+
 st.title("📊 Weather & Health Data: EDA + ML Demo")
 st.markdown("**Exploratory Data Analysis and Machine Learning App**")
 
-# ---------------- SIDEBAR ----------------
+
 st.sidebar.header("1️⃣ Data Input")
 file = st.sidebar.file_uploader("Upload CSV or Excel file", type=["csv", "xlsx"])
 
-# ---------------- DATA LOAD ----------------
+
 @st.cache_data
 def load_data(file):
     if file.name.endswith(".csv"):
@@ -32,7 +32,7 @@ if file:
     df = load_data(file)
     st.success("✅ Dataset Loaded Successfully")
 
-    # ---------------- DATA CLEANING ----------------
+    #  DATA CLEANING 
     st.sidebar.markdown("---")
     st.sidebar.header("2️⃣ Data Cleaning")
     if st.sidebar.checkbox("Drop Missing Values"):
@@ -40,7 +40,7 @@ if file:
     if st.sidebar.checkbox("Fill Missing Values (Mean)"):
         df = df.fillna(df.mean(numeric_only=True))
 
-    # ---------------- SESSION STATE ----------------
+    # SESSION STATE 
     if "active_chart" not in st.session_state:
         st.session_state.active_chart = None
 
@@ -58,18 +58,17 @@ if file:
     if st.sidebar.button("🔥 Correlation Heatmap"):
         st.session_state.active_chart = "Heatmap"
 
-    # ---------------- DATA PREVIEW ----------------
+
     with st.expander("🔍 Dataset Preview & Statistics"):
         st.subheader("Preview")
         st.dataframe(df.head())
         st.subheader("Descriptive Statistics")
         st.write(df.describe())
 
-    # ---------------- COLUMN TYPES ----------------
     all_cols = df.columns.tolist()
     num_cols = df.select_dtypes(include=["int64", "float64"]).columns.tolist()
 
-    # ---------------- EDA SECTION ----------------
+    # EDA SECTION 
     st.markdown("---")
     st.subheader("📊 Exploratory Data Analysis")
 
@@ -118,7 +117,7 @@ if file:
     else:
         st.info("👈 Choose a visualization from the sidebar")
 
-    # ---------------- ML SECTION ----------------
+    # ML SECTION 
     st.markdown("---")
     st.subheader("🤖 Machine Learning")
 
@@ -186,11 +185,11 @@ if file:
 
                 st.bar_chart(imp_df.set_index("Feature"))
 
-# ---------------- NO FILE ----------------
+
 else:
     st.info("👈 Upload a dataset to begin")
 
-# ---------------- FOOTER ----------------
+# FOOTER 
 st.markdown("---")
 st.markdown(
     "<div style='text-align:center;color:gray;'>"
@@ -198,3 +197,4 @@ st.markdown(
     "</div>",
     unsafe_allow_html=True
 )
+
